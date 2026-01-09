@@ -1,6 +1,7 @@
 import pygame
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT, PLAYER_RADIUS
 from logger import log_state
+from player import Player
 
 def main():
     print("Starting Asteroids with pygame version:", pygame.version.ver)
@@ -13,6 +14,7 @@ def main():
     #set dt as delta time counter
     dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, PLAYER_RADIUS)
 
     while True:
         log_state()
@@ -20,9 +22,10 @@ def main():
             if event.type == pygame.QUIT:
                 return
         screen.fill("black")
+        player.draw(screen)
         pygame.display.flip()
         clock.tick(60)
-        dt = clock.tick() / 1000   
+        dt = clock.tick() / 1000
     #    print(f"Current Delta Time is: {dt}")
 
 
