@@ -1,5 +1,5 @@
 import pygame
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT, PLAYER_RADIUS
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT, PLAYER_RADIUS, PLAYER_TURN_SPEED
 from logger import log_state
 from player import Player
 
@@ -23,9 +23,9 @@ def main():
                 return
         screen.fill("black")
         player.draw(screen)
+        player.update(dt)
         pygame.display.flip()
-        clock.tick(60)
-        dt = clock.tick() / 1000
+        dt = clock.tick(60) / 1000
     #    print(f"Current Delta Time is: {dt}")
 
 
