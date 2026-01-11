@@ -11,8 +11,15 @@ def main():
     pygame.init()
     clock = pygame.time.Clock()
 
-    #set dt as delta time counter
+    #Define sprite groups
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    Player.containers = (updatable, drawable)
+
+    #Set dt as delta time counter
     dt = 0
+
+    #Define player and screen size
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, PLAYER_RADIUS)
 
@@ -22,11 +29,11 @@ def main():
             if event.type == pygame.QUIT:
                 return
         screen.fill("black")
-        player.draw(screen)
-        player.update(dt)
+        updatable.update(dt)
+        for sprite in drawable:
+            sprite.draw(screen)
         pygame.display.flip()
         dt = clock.tick(60) / 1000
-    #    print(f"Current Delta Time is: {dt}")
 
 
 if __name__ == "__main__":
