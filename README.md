@@ -7,7 +7,7 @@ Fly your ship, shoot stuff 👾
 ---
 
 ## Status
-![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+![Python](https://img.shields.io/badge/python-3.12%2B-blue)
 ![Pygame](https://img.shields.io/badge/pygame-required-green)
 ![Last Commit](https://img.shields.io/github/last-commit/razoreater/asteroids)
 
