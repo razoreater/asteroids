@@ -1,5 +1,5 @@
 [project]
-name = "Asteroids -- easy and lazy version"
+name = "Asteroids"
 version = "1.0.0"
 description = "Created as a Boot.dev project"
 readme = "README.md"
